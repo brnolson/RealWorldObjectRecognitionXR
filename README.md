@@ -33,10 +33,17 @@ The system combines **Vuforia object tracking**, **Unity world-space UI**, and t
    - Set **Asset Serialization** to *Force Text*.  
    - Set **Version Control** to *Visible Meta Files*.  
 
-5. Build settings:
-   - Platform: **Android**  
-   - Architecture: **ARM64**  
-   - Target Device: **Meta Quest 3**  
+5. Enable Developer Mode:
+   - Open the **Meta Horizon** app on your phone.
+   - Go to **Devices → Headset Settings → Developer Mode**.
+   - Toggle **Developer Mode On**.
+   - Connect your Quest to your PC using a USB‑C cable.
+   - On the headset, a prompt will appear: **Allow USB Debugging** → select Allow.
+
+7. Build and Run:
+   - In Unity, set the **Build Profile** to **Meta Quest** (File → Build Profile).
+   - Click **Switch Profile**.
+   - Select **Build and Run** to deploy the app to your headset.
 
 ## How It Works
 1. The **Vuforia ARCamera** detects a real-world object using an image or 3D model target.  
