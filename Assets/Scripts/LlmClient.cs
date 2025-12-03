@@ -5,7 +5,7 @@ using UnityEngine.Networking;
 
 public static class LlmClient
 {
-    private const string BaseUrl = "https://royal-unterrible-constance.ngrok-free.dev";
+    private const string BaseUrl = "https://shayne-rosaceous-francina.ngrok-free.dev";
 
     [Serializable]
     private class TranscribeResponse

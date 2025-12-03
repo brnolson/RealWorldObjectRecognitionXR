@@ -69,7 +69,19 @@ The app requests these at runtime:
 
 - Spacial information access
 
-### 7. Build and Run
+### 7. Backend Setup (Required)
+
+This project includes a Python FastAPI backend used for speech transcription and LLM responses.
+
+To run the backend:
+
+1. Open the `/backend` folder.
+2. Follow the instructions in `backend/README.md` to create the Python environment, install dependencies, and start the server.
+3. Start ngrok to expose the backend to your Quest device.
+4. Update the Unity script `LlmClient.cs` with the provided ngrok HTTPS URL.
+
+
+### 8. Build and Run
 
 Set build target to Android / Meta Quest
 
