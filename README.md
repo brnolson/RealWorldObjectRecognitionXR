@@ -1,69 +1,126 @@
-# Real-World Object Recognition and Interaction (Meta Quest 3)
+# Real-World Passthrough Interaction System (Meta Quest 3)
 
 ## Overview
-This project explores the use of **mixed reality (MR)** on the **Meta Quest 3** to recognize real-world objects and overlay contextual information directly within the user’s environment.  
-The system combines **Vuforia object tracking**, **Unity world-space UI**, and the **Meta XR SDK** to demonstrate how XR can be used for education, maintenance, and training scenarios.
+This project demonstrates a **mixed reality interface** on the **Meta Quest 3** that captures the user’s real environment through the headset cameras, listens for spoken queries, and generates context-aware responses. The system streams the Quest’s passthrough feed, performs voice capture, sends both audio and an MR frame to a backend, and displays responses via an avatar and in-world billboards.
+
+The prototype explores how MR can support education, robotics, and interactive spatial computing scenarios by blending real-world visuals with AI-driven assistance.
 
 ## Features
-- **Real-time Object Recognition** using Vuforia Image or Model Targets  
-- **World-Space Instruction Overlays** anchored to recognized objects  
-- **Passthrough MR Mode** using the Meta XR SDK  
-- **Billboarding and Callout System** for intuitive labeling  
-- **Spatial Anchoring** to maintain overlay position across sessions  
+- **Headset Passthrough Capture** using Uralstech’s QuestCamera API  
+- **Real-time Voice Recognition** for hands-free interaction  
+- **Continuous Capture Session** that streams headset camera frames  
+- **World-Space UI Panels** for visualization and debugging  
+- **Avatar State Machine** with Idle, Listening, Processing, Success, and Error modes  
+- **Billboard Displays** showing transcription and assistant output  
+- **Palm-Up Gesture Triggering** to start and stop interactions  
 
 ## Tech Stack
-- **Engine:** Unity
-- **SDKs:** Meta XR All-in-One SDK, OpenXR, Vuforia Engine  
+- **Engine:** Unity  
+- **SDKs:** Meta XR All-in-One SDK, OpenXR, Uralstech QuestCamera  
 - **Language:** C#  
 - **Target Device:** Meta Quest 3  
 
 ## Project Setup
-1. Install **Unity 2022 LTS** with Android Build Support, SDK, NDK, and OpenJDK.  
-2. Clone the repository:  
-   ```bash
-   git clone https://github.com/brnolson/RealWorldObjectRecognitionXR.git
-   cd RealWorldObjectRecognitionXR
-   ```
-3. Install dependencies:
-   - **Meta XR SDK** (from the Unity Asset Store)  
-   - **Vuforia Engine** (from [developer.vuforia.com](https://developer.vuforia.com))
 
-4. In Unity:
-   - Go to **Edit → Project Settings → XR Plugin Management → OpenXR** and enable **OpenXR**.  
-   - Set **Asset Serialization** to *Force Text*.  
-   - Set **Version Control** to *Visible Meta Files*.  
+### 1. Install Unity
+Install **Unity 2022 LTS** with:
+- Android Build Support  
+- Android SDK, NDK, and OpenJDK  
 
-5. Enable Developer Mode:
-   - Open the **Meta Horizon** app on your phone.
-   - Go to **Devices → Headset Settings → Developer Mode**.
-   - Toggle **Developer Mode On**.
-   - Connect your Quest to your PC using a USB‑C cable.
-   - On the headset, a prompt will appear: **Allow USB Debugging** → select Allow.
+### 2. Clone the Repository
+```bash
+git clone https://github.com/brnolson/QuestPassthroughInteraction.git
+cd QuestPassthroughInteraction
+```
 
-7. Build and Run:
-   - In Unity, set the **Build Profile** to **Meta Quest** (File → Build Profile).
-   - Click **Switch Profile**.
-   - Select **Build and Run** to deploy the app to your headset.
+### 3. Install Dependencies
 
-## How It Works
-1. The **Vuforia ARCamera** detects a real-world object using an image or 3D model target.  
-2. Once detected, Unity spawns a **world-space UI overlay** aligned to the object’s pose.  
-3. The overlay includes labels, step-by-step instructions, and interactive buttons.  
-4. Users can interact via controller or hand input.  
-5. Optional **Meta Anchors** allow the overlay to persist across sessions.
+Meta XR SDK from the Unity Asset Store
 
-## Evaluation Plan
-- Measure recognition accuracy and tracking stability under varied lighting conditions.  
-- Assess usability and overlay readability through user feedback sessions.  
-- Compare performance and accuracy against baseline Vuforia examples.
+Uralstech QuestCamera package for headset camera access
 
-## Future Work
-- Integrate **TensorFlow Lite** for broader object classification.  
-- Add **voice-driven interaction** for accessibility and context-aware queries.  
-- Extend the system to **multi-object recognition** and dynamic AR tutorials.
-- Add HUD and AI Assistant avatar.
+### 4. Unity Configuration
 
-## Team Members
-- **Daniel Vu** – Computer Vision & Integration Lead  
-- **Brenen Olson** – Interaction & XR Design Lead  
+Open Project Settings → XR Plugin Management → OpenXR
+Enable OpenXR
+Set:
 
+Asset Serialization → Force Text
+
+Version Control → Visible Meta Files
+
+### 5. Enable Developer Mode
+
+Open Meta Horizon app on your phone
+
+Devices → Headset Settings → Developer Mode → On
+
+Connect Quest 3 to PC via USB-C
+
+Approve Allow USB Debugging inside the headset
+
+### 6. Required Permissions
+
+The app requests these at runtime:
+
+- Camera access
+
+- Microphone access
+
+- Spacial information access
+
+### 7. Build and Run
+
+Set build target to Android / Meta Quest
+
+Switch Profile
+
+Build and Run
+
+### How It Works
+
+QuestPassthroughManager opens the headset camera and starts a continuous session.
+
+Frames are streamed to a texture available to Unity’s UI system.
+
+When users raise their palm, VoiceCapture begins recording microphone audio.
+
+After interaction ends, the system:
+
+Converts microphone data to PCM
+
+Captures the current passthrough frame as PNG
+
+Sends both payloads to a backend
+
+The backend response updates the avatar and billboard text inside the headset.
+
+Avatar state transitions provide clear, intuitive feedback.
+
+### Evaluation Plan
+
+- Validate passthrough clarity across lighting conditions
+
+- Measure latency from gesture to final assistant response
+
+- Track speech transcription accuracy in dynamic environments
+
+- Perform user testing on comprehension and comfort
+
+### Future Work
+
+- Add on-device object recognition for labeled environments
+
+- Expand hand gesture vocabulary for non-verbal control
+
+- Introduce spatial anchors for persistent world overlays
+
+- Enable shared multi-user MR sessions
+
+- Improve avatar expressiveness
+
+### Team Members
+
+- Daniel Vu - Passthrough and Voice Integration Lead
+
+- Brenen Olson - Interaction and MR Experience Lead

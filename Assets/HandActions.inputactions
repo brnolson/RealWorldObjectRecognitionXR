@@ -1,0 +1,35 @@
+{
+    "version": 1,
+    "name": "HandActions",
+    "maps": [
+        {
+            "name": "Hand",
+            "id": "2b407611-932a-477e-bc84-f209009e08a6",
+            "actions": [
+                {
+                    "name": "Talk",
+                    "type": "Button",
+                    "id": "a8eabf69-dd39-45d5-afc7-f3fa4dc73c64",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "e97c56a3-3fa6-46df-b41d-630377aa33da",
+                    "path": "<XRController>{LeftHand}/triggerPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Talk",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
