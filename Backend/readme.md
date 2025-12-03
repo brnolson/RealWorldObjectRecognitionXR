@@ -1,0 +1,4 @@
+On separate terminals run
+
+uvicorn main:app --reload --port 8000
+ngrok http 8000

@@ -1,14 +1,108 @@
 {
   "dependencies": {
-    "com.ptc.vuforia.engine": {
-      "version": "file:com.ptc.vuforia.engine-11.4.4.tgz",
+    "com.meta.xr.mrutilitykit": {
+      "version": "81.0.0",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.meta.xr.sdk.core": "81.0.0",
+        "com.unity.textmeshpro": "3.0.6",
+        "com.unity.ai.navigation": "1.1.4",
+        "com.unity.nuget.newtonsoft-json": "3.0.2"
+      },
+      "url": "https://packages.unity.com"
+    },
+    "com.meta.xr.sdk.all": {
+      "version": "81.0.0",
       "depth": 0,
-      "source": "local-tarball",
+      "source": "registry",
+      "dependencies": {
+        "com.meta.xr.sdk.core": "81.0.0",
+        "com.meta.xr.sdk.audio": "81.0.0",
+        "com.meta.xr.sdk.voice": "81.0.0",
+        "com.meta.xr.simulator": "81.0.0",
+        "com.meta.xr.sdk.haptics": "81.0.0",
+        "com.meta.xr.mrutilitykit": "81.0.0",
+        "com.meta.xr.sdk.platform": "81.0.0",
+        "com.meta.xr.sdk.interaction": "81.0.0",
+        "com.meta.xr.sdk.interaction.ovr": "81.0.0"
+      },
+      "url": "https://packages.unity.com"
+    },
+    "com.meta.xr.sdk.audio": {
+      "version": "81.0.0",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
+    "com.meta.xr.sdk.core": {
+      "version": "81.0.0",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
+    "com.meta.xr.sdk.haptics": {
+      "version": "81.0.0",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.meta.xr.sdk.core": "81.0.0"
+      },
+      "url": "https://packages.unity.com"
+    },
+    "com.meta.xr.sdk.interaction": {
+      "version": "81.0.0",
+      "depth": 1,
+      "source": "registry",
       "dependencies": {
         "com.unity.ugui": "1.0.0",
-        "com.unity.inputsystem": "1.11.2",
-        "com.unity.nuget.newtonsoft-json": "3.2.1"
-      }
+        "com.unity.textmeshpro": "3.0.6"
+      },
+      "url": "https://packages.unity.com"
+    },
+    "com.meta.xr.sdk.interaction.ovr": {
+      "version": "81.0.0",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.meta.xr.sdk.core": "81.0.0",
+        "com.meta.xr.sdk.interaction": "81.0.0"
+      },
+      "url": "https://packages.unity.com"
+    },
+    "com.meta.xr.sdk.platform": {
+      "version": "81.0.0",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.ugui": "1.0.0"
+      },
+      "url": "https://packages.unity.com"
+    },
+    "com.meta.xr.sdk.voice": {
+      "version": "81.0.0",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
+    "com.meta.xr.simulator": {
+      "version": "81.0.0",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.ai.navigation": {
+      "version": "2.0.9",
+      "depth": 2,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.modules.ai": "1.0.0"
+      },
+      "url": "https://packages.unity.com"
     },
     "com.unity.burst": {
       "version": "1.8.25",
@@ -196,6 +290,28 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
+    "com.unity.services.cloud-build": {
+      "version": "2.0.6",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.collab-proxy": "2.6.0",
+        "com.unity.services.core": "1.7.0",
+        "com.unity.nuget.newtonsoft-json": "3.0.2"
+      },
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.services.core": {
+      "version": "1.14.0",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.modules.androidjni": "1.0.0",
+        "com.unity.nuget.newtonsoft-json": "3.2.1",
+        "com.unity.modules.unitywebrequest": "1.0.0"
+      },
+      "url": "https://packages.unity.com"
+    },
     "com.unity.settings-manager": {
       "version": "2.1.0",
       "depth": 1,
@@ -257,6 +373,14 @@
         "com.unity.settings-manager": "1.0.1"
       },
       "url": "https://packages.unity.com"
+    },
+    "com.unity.textmeshpro": {
+      "version": "5.0.0",
+      "depth": 2,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.ugui": "2.0.0"
+      }
     },
     "com.unity.toolchain.win-x86_64-linux-x86_64": {
       "version": "2.0.11",
@@ -401,6 +525,23 @@
         "com.unity.xr.legacyinputhelpers": "2.1.2"
       },
       "url": "https://packages.unity.com"
+    },
+    "com.uralstech.utils.singleton": {
+      "version": "https://github.com/Uralstech/Utils.Singleton.git#upm",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "4075ad706e203b79fe7ff067d8f2b0edb35667c4"
+    },
+    "com.uralstech.uxr.questcamera": {
+      "version": "https://github.com/Uralstech/UXR.QuestCamera.git#upm",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.uralstech.utils.singleton": "1.2.1",
+        "com.unity.modules.androidjni": "1.0.0"
+      },
+      "hash": "8d90d090eb900de41418b1015ca5cf16d4d81d62"
     },
     "com.unity.modules.accessibility": {
       "version": "1.0.0",

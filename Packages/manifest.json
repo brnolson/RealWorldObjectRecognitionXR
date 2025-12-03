@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "com.ptc.vuforia.engine": "file:com.ptc.vuforia.engine-11.4.4.tgz",
+    "com.meta.xr.sdk.all": "81.0.0",
     "com.unity.collab-proxy": "2.10.1",
     "com.unity.feature.development": "1.0.2",
     "com.unity.inputsystem": "1.14.2",
@@ -9,6 +9,7 @@
     "com.unity.multiplayer.center": "1.0.0",
     "com.unity.nuget.newtonsoft-json": "3.2.1",
     "com.unity.render-pipelines.universal": "17.2.0",
+    "com.unity.services.cloud-build": "2.0.6",
     "com.unity.test-framework": "1.6.0",
     "com.unity.toolchain.win-x86_64-linux-x86_64": "2.0.11",
     "com.unity.xr.androidxr-openxr": "1.0.2",
@@ -18,6 +19,8 @@
     "com.unity.xr.management": "4.5.3",
     "com.unity.xr.meta-openxr": "2.2.1",
     "com.unity.xr.openxr": "1.16.0",
+    "com.uralstech.utils.singleton": "https://github.com/Uralstech/Utils.Singleton.git#upm",
+    "com.uralstech.uxr.questcamera": "https://github.com/Uralstech/UXR.QuestCamera.git#upm",
     "com.unity.modules.accessibility": "1.0.0",
     "com.unity.modules.ai": "1.0.0",
     "com.unity.modules.androidjni": "1.0.0",

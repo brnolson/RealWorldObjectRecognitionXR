@@ -1,0 +1,35 @@
+{
+    "version": 1,
+    "name": "VRControls",
+    "maps": [
+        {
+            "name": "Capture",
+            "id": "38d9e273-4a4e-4566-92bc-99ade0310430",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "73ab6e0f-c2eb-476c-a388-0c996a4c3e74",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "0411d218-8bd7-4191-a966-f4d2c7957a6c",
+                    "path": "<XRController>{RightHand}/{PrimaryTrigger}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

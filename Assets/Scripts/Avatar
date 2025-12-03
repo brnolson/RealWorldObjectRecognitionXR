@@ -1,0 +1,36 @@
+using UnityEngine;
+
+public class Avatar : MonoBehaviour
+{
+    [Header("References")]
+    public Transform handTransform;      // RightHand Controller
+    public GameObject avatarPrefab;      // ProcessingAvatar prefab
+
+    private GameObject _instance;
+
+    void Start()
+    {
+        if (handTransform == null || avatarPrefab == null)
+        {
+            Debug.LogError("ProcessingAvatarController missing references");
+            return;
+        }
+
+        // Spawn avatar as a child of the hand
+        _instance = Instantiate(avatarPrefab, handTransform);
+
+        // Small offset so it floats above / in front of the hand
+        _instance.transform.localPosition = new Vector3(0f, 0.05f, 0.10f);
+        _instance.transform.localRotation = Quaternion.identity;
+        _instance.transform.localScale = Vector3.one * 0.2f;
+
+        // Hide by default
+        _instance.SetActive(false);
+    }
+
+    public void SetProcessing(bool processing)
+    {
+        if (_instance != null)
+            _instance.SetActive(processing);
+    }
+}
