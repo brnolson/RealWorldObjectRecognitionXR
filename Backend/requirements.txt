@@ -3,3 +3,4 @@ uvicorn
 python-dotenv
 opencv-python
 openai>=1.3.0
+python-multipart
